@@ -1,0 +1,43 @@
+.wrapper {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.textWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.imageWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.deleteButton {
+    width: 90px;
+    height: 40px;
+}
+
+.nameP{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.contactLogo {
+    width: 20px;
+    height: auto;
+}
+
+p{
+    margin: 7px 0;
+}
