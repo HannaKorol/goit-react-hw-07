@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import s from "./ContactList.module.css";
-import { deleteContact, selectContacts } from "../../redux/contactsSlice";
+import { selectContacts } from "../../redux/contactsSlice";
 import { selectNameFilter } from "../../redux/filtersSlice";
+import {  deleteContactsThunk } from "../../redux/contactsOps";
 
 export default function ContactList() {
   const dispatch = useDispatch();
-
   const contacts = useSelector(selectContacts);
   const nameFilter = useSelector(selectNameFilter);
   const filteredContacts = contacts.filter((contact) =>
@@ -21,7 +21,7 @@ export default function ContactList() {
             name={contact.name}
             number={contact.number}
             onDelete={() =>
-              dispatch(deleteContact(contact.id))
+              dispatch(deleteContactsThunk(contact.id))
             } /* Передаємо id контакту для видалення */
           />
         </li>
