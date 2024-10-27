@@ -1,6 +1,3 @@
-//reducer: changeFilter
-//export default function SelectNameFilter
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
