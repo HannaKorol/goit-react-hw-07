@@ -7,8 +7,8 @@ import { addContactsThunk } from "../../redux/contactsOps.js";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
-  const nameFieldId = useId(); //!!!Не используйте Nano ID для генерации свойства key в JSX. При каждом рендере key будет разный, что плохо скажется на производительности.Для связи <input> и <label> лучше использовать useId, который был добавлен в React 18. (https://github.com/ai/nanoid/blob/main/README.ru.md)
-  const numberFieldId = useId();
+/*   const nameFieldId = useId(); //!!!Не используйте Nano ID для генерации свойства key в JSX. При каждом рендере key будет разный, что плохо скажется на производительности.Для связи <input> и <label> лучше использовать useId, который был добавлен в React 18. (https://github.com/ai/nanoid/blob/main/README.ru.md)
+  const numberFieldId = useId(); */
 
   const initialValues = {
     name: "",
@@ -53,23 +53,23 @@ export default function ContactForm() {
           { values } //values - щоб зробити кнопку не активною коли немає номеру телефону чи имя (Лекція 1)
         ) => (
           <Form className={s.form}>
-            <label htmlFor={nameFieldId} className={s.label}>
+            <label htmlFor="name" className={s.label}>
               <span> Name </span>
               <Field
                 type="text"
                 name="name"
-                id={nameFieldId}
+                id="name"
                 className={s.input}
                 placeholder="Enter your name"
               />
               <ErrorMessage name="name" component="div" className={s.error} />
             </label>
-            <label htmlFor={numberFieldId} className={s.label}>
+            <label htmlFor="number" className={s.label}>
               <span>Number</span>
               <Field
                 type="text"
                 name="number"
-                id={numberFieldId}
+                id="number"
                 className={s.input}
                 placeholder="Enter your phone number"
               />
